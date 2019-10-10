@@ -4,6 +4,7 @@ zahl1 = 0
 zahl2 = 0
 operator = None
 bedingung = True
+ergebnis = ""
 
 while bedingung:
     print("Welche Berechnung möchten Sie durchführen?")
@@ -26,25 +27,32 @@ while bedingung:
     if operator == "+":
         ergebnis = calc.addition(zahl1, zahl2)
         print("Das Ergebnis ist: ", str(ergebnis))
+        calc.writefile(str(ergebnis))
 
     elif operator == "-":
         ergebnis = calc.subtraktion(zahl1, zahl2)
         print("Das Ergebnis ist: ", str(ergebnis))
+        calc.writefile(str(ergebnis))
     elif operator == "*":
         ergebnis = calc.multiplikation(zahl1, zahl2)
         print("Das Ergebnis ist: ", str(ergebnis))
+        calc.writefile(str(ergebnis))
     elif operator == "/":
         ergebnis = calc.division(zahl1, zahl2)
         print("Das Ergebnis ist: ", str(ergebnis))
+        calc.writefile(str(ergebnis))
     elif operator == "log":
         ergebnis = calc.logarithmus(zahl1)
         print("Das Ergebnis ist: ", str(ergebnis))
+        calc.writefile(str(ergebnis))
     elif operator == "x²":
         ergebnis = calc.quadrat(zahl1)
         print("Das Ergebnis ist: ", str(ergebnis))
+        calc.writefile(str(ergebnis))
     elif operator == "wurzel":
         ergebnis = calc.wurzel(zahl1)
         print("Das Ergebnis ist: " + str(ergebnis))
+        calc.writefile(str(ergebnis))
 
     decision = input("Möchten Sie es erneut versuchen? (ja | nein) : ").strip().lower()
     if decision == "nein":
